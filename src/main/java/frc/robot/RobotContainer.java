@@ -6,6 +6,7 @@ package frc.robot;
 
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.BigStick.BigStickSubsystem;
+import frc.robot.subsystems.BigStick.States.PositionState;
 import frc.robot.subsystems.Drivetrain.*;
 import frc.robot.subsystems.Drivetrain.States.OpenLoopState;
 import frc.robot.subsystems.Yoinker.YoinkerSubsystem;
@@ -30,6 +31,7 @@ public class RobotContainer {
   private void initializeSubsystems() {
     drive = DrivetrainSubsystem.getInstance();
     yoink = YoinkerSubsystem.getInstance();
+    stick = BigStickSubsystem.getInstance();
   }
 
   private void configureBindings() {
@@ -39,6 +41,7 @@ public class RobotContainer {
 
   private void setAllDefaultCommands() {
     CommandScheduler.getInstance().setDefaultCommand(drive, new OpenLoopState());
+    CommandScheduler.getInstance().setDefaultCommand(stick, new PositionState());
   }
 
 //  public Command getAutonomousCommand() {
