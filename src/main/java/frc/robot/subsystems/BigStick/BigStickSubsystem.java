@@ -40,10 +40,10 @@ public class BigStickSubsystem extends SubsystemBase {
     }
 
     protected double getMeasurement() {
-      return getArmPosition();
+      return getBigStickPos();
     } 
 
-    public double getArmPosition() {
+    public double getBigStickPos() {
       return encoder.getPosition();
     }
 }
