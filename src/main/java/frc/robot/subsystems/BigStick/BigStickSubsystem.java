@@ -15,8 +15,8 @@ public class BigStickSubsystem extends SubsystemBase {
     private boolean isUsingPID = false;//anti-error comment
     private CANSparkMax motorBS;
     private RelativeEncoder encoder;
-    private SlewRateLimiter armLimiter;
-    private double armOutput;
+    private SlewRateLimiter stickLimiter;
+    private double stickOutput;
     private double limitedOutput;
     private ArmFeedforward feedForward = new ArmFeedforward(0,0,0);
     private PIDController stickPID = new PIDController(Constants.BigStickConstants.kP, Constants.BigStickConstants.kI, Constants.BigStickConstants.kD);
@@ -28,7 +28,7 @@ public class BigStickSubsystem extends SubsystemBase {
 //
       motorBS = new CANSparkMax(RobotMap.BIG_STICK_MOTOR_ID, MotorType.kBrushless);
       encoder = motorBS.getEncoder();
-      armLimiter = new SlewRateLimiter(1.8);   
+      stickLimiter = new SlewRateLimiter(1.8);   
     }
 
     public static synchronized BigStickSubsystem getInstance() {
@@ -43,7 +43,7 @@ public class BigStickSubsystem extends SubsystemBase {
     }
 //
     public void useOutput(double output, double setpoint) {
-      armOutput = output;
+      stickOutput = output;
       //limitedOutput = armLimiter.calculate(armOutput);
       setPower(output);
     }
