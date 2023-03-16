@@ -14,6 +14,9 @@ import frc.robot.subsystems.BigStick.States.PrintState;
 import frc.robot.subsystems.Drivetrain.*;
 import frc.robot.subsystems.Drivetrain.States.OpenLoopState;
 import frc.robot.subsystems.Yoinker.YoinkerSubsystem;
+import frc.robot.subsystems.Yoinker.States.ForwardState;
+import frc.robot.subsystems.Yoinker.States.IdleState;
+import frc.robot.subsystems.Yoinker.States.ReverseState;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -40,6 +43,7 @@ public class RobotContainer {
   private void setAllDefaultCommands() {
     CommandScheduler.getInstance().setDefaultCommand(drive, new OpenLoopState());
     CommandScheduler.getInstance().setDefaultCommand(stick, new PositionState(BigStickPos.STARTUP));
+    CommandScheduler.getInstance().setDefaultCommand(yoink, new IdleState());
   }
 
   private void initializeSubsystems() {
@@ -49,8 +53,12 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-    Trigger spit = driveStick.button(ControllerMap.DriveController.Button.TRIGGER);
-    Trigger swallow = driveStick.button(ControllerMap.DriveController.Button.B2);
+    Trigger spit = driveStick.button(ControllerMap.DriveController.Button.TRIGGER).onTrue(
+      new ForwardState()
+    );
+    Trigger swallow = driveStick.button(ControllerMap.DriveController.Button.B2).onTrue(
+      new ReverseState()
+    );
     Trigger stow = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
       new PositionState(BigStickPos.FLOOR_YOINK)
     );
