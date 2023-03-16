@@ -7,7 +7,6 @@ package frc.robot;
 import frc.robot.Constants.ControllerMap;
 import frc.robot.Constants.Constants;
 import frc.robot.Constants.Constants.BigStickConstants.BigStickPos;
-import frc.robot.commands.Autos;
 import frc.robot.subsystems.BigStick.BigStickSubsystem;
 import frc.robot.subsystems.BigStick.States.PositionState;
 import frc.robot.subsystems.BigStick.States.PrecisionDownState;
