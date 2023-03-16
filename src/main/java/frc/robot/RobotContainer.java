@@ -10,6 +10,8 @@ import frc.robot.Constants.Constants.BigStickConstants.BigStickPos;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.BigStick.BigStickSubsystem;
 import frc.robot.subsystems.BigStick.States.PositionState;
+import frc.robot.subsystems.BigStick.States.PrecisionDownState;
+import frc.robot.subsystems.BigStick.States.PrecisionUpState;
 import frc.robot.subsystems.BigStick.States.PrintState;
 import frc.robot.subsystems.Drivetrain.*;
 import frc.robot.subsystems.Drivetrain.States.OpenLoopState;
@@ -59,8 +61,23 @@ public class RobotContainer {
     Trigger swallow = driveStick.button(ControllerMap.DriveController.Button.B2).onTrue(
       new ReverseState()
     );
-    Trigger stow = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
+    Trigger trig3 = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
       new PositionState(BigStickPos.FLOOR_YOINK)
+    );
+    Trigger  trig4 = driveStick.button(ControllerMap.DriveController.Button.B4).onTrue(
+      new PositionState(BigStickPos.SHELF_YOINK)
+    );
+    Trigger trig5 = driveStick.button(ControllerMap.DriveController.Button.B5).onTrue(
+      new PositionState(BigStickPos.SCORE_CUBE)
+    );
+    Trigger trig6 = driveStick.button(ControllerMap.DriveController.Button.B6).onTrue(
+      new PositionState(BigStickPos.STARTUP)
+    );
+    Trigger trig7 = driveStick.button(ControllerMap.DriveController.POVButton.UP).onTrue(
+      new PrecisionUpState().repeatedly()
+    );
+    Trigger trig8 = driveStick.button(ControllerMap.DriveController.POVButton.DOWN).onTrue(
+      new PrecisionDownState().repeatedly()
     );
   }
 
