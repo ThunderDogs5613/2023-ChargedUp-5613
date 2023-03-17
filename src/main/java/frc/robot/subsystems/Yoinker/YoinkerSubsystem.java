@@ -15,7 +15,7 @@ public class YoinkerSubsystem extends SubsystemBase {
     private YoinkerSubsystem() {
         compressor = new Compressor(1, PneumaticsModuleType.REVPH);
 
-        solenoid = new DoubleSolenoid(PneumaticsModuleType.REVPH , 0, 1);
+        solenoid = new DoubleSolenoid(1, PneumaticsModuleType.REVPH , 0, 1);
         compressor.enableAnalog(75, 120);
     }
 

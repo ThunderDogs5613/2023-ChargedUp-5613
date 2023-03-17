@@ -18,7 +18,6 @@ import frc.robot.subsystems.Yoinker.YoinkerSubsystem;
 import frc.robot.subsystems.Yoinker.States.ForwardState;
 import frc.robot.subsystems.Yoinker.States.IdleState;
 import frc.robot.subsystems.Yoinker.States.ReverseState;
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.CommandGenericHID;
@@ -26,6 +25,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.*;
+import frc.robot.commands.Autos.MildRetreat;
 
 
 public class RobotContainer {
@@ -43,7 +43,7 @@ public class RobotContainer {
 
   private void setAllDefaultCommands() {
     CommandScheduler.getInstance().setDefaultCommand(drive, new OpenLoopState());
-    CommandScheduler.getInstance().setDefaultCommand(stick, new PositionState(BigStickPos.STARTUP));
+    CommandScheduler.getInstance().setDefaultCommand(stick, new PrintState());
     CommandScheduler.getInstance().setDefaultCommand(yoink, new IdleState());
   }
 
@@ -78,9 +78,12 @@ public class RobotContainer {
     Trigger trig8 = driveStick.button(ControllerMap.DriveController.POVButton.DOWN).onTrue(
       new PrecisionDownState().repeatedly()
     );
+    Trigger trig9 = driveStick.button(ControllerMap.DriveController.POVButton.LEFT).onTrue(
+      new PrintState()
+    );
   }
 
-//  public Command getAutonomousCommand() {
-  //  return Autos.exampleAuto(m_exampleSubsystem);
-//  }}
+  public Command getAutonomousCommand() {
+    return new MildRetreat();
+  }
 }
