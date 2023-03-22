@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.*;
+import frc.robot.commands.Autos.GonBalance;
 import frc.robot.commands.Autos.MildRetreat;
 
 
@@ -84,6 +85,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return new MildRetreat();
+    return new GonBalance();
   }
 }

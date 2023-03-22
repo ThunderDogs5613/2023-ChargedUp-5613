@@ -18,7 +18,7 @@ public class SetAutonArcade extends CommandBase {
   }
 
   @Override
-  public void initialize() {
+  public void execute() {
     DrivetrainSubsystem.getInstance().setAutonPower(inputThrottle, inputRotation);;
   }
 
