@@ -35,6 +35,7 @@ public class RobotContainer {
   YoinkerSubsystem yoink;
   BigStickSubsystem stick;
   CommandGenericHID driveStick = ControllerMap.getDriveStick();
+  CommandGenericHID buttonPad = ControllerMap.getButtonPad();
 
   public RobotContainer() {
     initializeSubsystems();
@@ -75,15 +76,16 @@ public class RobotContainer {
       new PositionState(BigStickPos.STARTUP)
     );
 
-    Trigger altTrig3 = driveStick.button(ControllerMap.ButtonPad.Button.B12).onTrue(
+    Trigger altTrig3 = buttonPad.button(ControllerMap.ButtonPad.Button.B12).onTrue(
       new PositionState(BigStickPos.FLOOR_YOINK)
     );
-    Trigger altTrig5 = driveStick.button(ControllerMap.ButtonPad.Button.B10).onTrue(
+    Trigger altTrig5 = buttonPad.button(ControllerMap.ButtonPad.Button.B10).onTrue(
       new PositionState(BigStickPos.SCORE_CUBE)
     );
-    Trigger altTrig6 = driveStick.button(ControllerMap.ButtonPad.Button.B11).onTrue(
+    Trigger altTrig6 = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
       new PositionState(BigStickPos.STARTUP)
     );
+
     Trigger trig7 = driveStick.button(ControllerMap.DriveController.POVButton.UP).onTrue(
       new PrecisionUpState().repeatedly()
     );
