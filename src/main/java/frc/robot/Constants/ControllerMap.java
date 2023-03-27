@@ -6,12 +6,19 @@ import edu.wpi.first.wpilibj2.command.button.CommandGenericHID;
 public class ControllerMap {
 
     public static CommandGenericHID driveStick = new CommandGenericHID(0);
+    public static CommandGenericHID buttonPad = new CommandGenericHID(1);
 
     public static CommandGenericHID getDriveStick(){
         if (driveStick == null){
             driveStick = new CommandGenericHID(0);
         }
         return driveStick;
+    }
+    public static CommandGenericHID getButtonPad(){
+        if (buttonPad == null){
+            buttonPad = new CommandGenericHID(1);
+        }
+        return buttonPad;
     }
 
     public static class DriveController{
@@ -39,4 +46,22 @@ public class ControllerMap {
             public static final int LEFT = 270;
         }
     }   
+
+    
+    public static class ButtonPad{
+        public static class Button{
+            public static final int B1 = 1;
+            public static final int B2 = 2;
+            public static final int B3 = 3;
+            public static final int B4 = 4;
+            public static final int B5 = 5;
+            public static final int B6 = 6;
+            public static final int B7 = 7;
+            public static final int B8 = 8;
+            public static final int B9 = 9;
+            public static final int B10 = 10;
+            public static final int B11 = 11;
+            public static final int B12 = 12;
+        }
+    }
 }

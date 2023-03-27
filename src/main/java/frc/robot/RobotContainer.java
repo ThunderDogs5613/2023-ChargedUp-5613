@@ -61,6 +61,7 @@ public class RobotContainer {
     Trigger swallow = driveStick.button(ControllerMap.DriveController.Button.B2).onTrue(
       new ReverseState()
     );
+
     Trigger trig3 = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
       new PositionState(BigStickPos.FLOOR_YOINK)
     );
@@ -71,6 +72,16 @@ public class RobotContainer {
       new PositionState(BigStickPos.SCORE_CUBE)
     );
     Trigger trig6 = driveStick.button(ControllerMap.DriveController.Button.B6).onTrue(
+      new PositionState(BigStickPos.STARTUP)
+    );
+
+    Trigger altTrig3 = driveStick.button(ControllerMap.ButtonPad.Button.B12).onTrue(
+      new PositionState(BigStickPos.FLOOR_YOINK)
+    );
+    Trigger altTrig5 = driveStick.button(ControllerMap.ButtonPad.Button.B10).onTrue(
+      new PositionState(BigStickPos.SCORE_CUBE)
+    );
+    Trigger altTrig6 = driveStick.button(ControllerMap.ButtonPad.Button.B11).onTrue(
       new PositionState(BigStickPos.STARTUP)
     );
     Trigger trig7 = driveStick.button(ControllerMap.DriveController.POVButton.UP).onTrue(
