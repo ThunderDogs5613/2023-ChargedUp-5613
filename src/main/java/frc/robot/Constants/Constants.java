@@ -21,13 +21,13 @@ public final class Constants {
 
         public static final double down = 0;
         public static final double mid = -55;
-        public static final double up = -90;
+        public static final double up = -100;
         public enum BigStickPos {
             DOWN, MID, UP, HOLD
         }
     }
     public static final class ScoopConstants {
-        public static final double kP = 0.03;
+        public static final double kP = 0.05;
         public static final double kI = 0.00;
         public static final double kD = 0.005;
 
@@ -37,9 +37,9 @@ public final class Constants {
         public static final double minEncoderOut = 0;
 
         public static final double zero = 0;
-        public static final double up = -3.0;
-        public static final double back = -4;
-        public static final double stow = 3.0;
+        public static final double up = -6;
+        public static final double back = -9;
+        public static final double stow = 5;
 
         public enum ScoopPos {
             ZERO, UP, BACK, STOW, HOLD
