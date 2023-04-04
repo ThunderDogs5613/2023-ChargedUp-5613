@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.ControllerMap;
 import frc.robot.Constants.Constants;
 import frc.robot.Constants.Constants.BigStickConstants.BigStickPos;
+import frc.robot.Constants.Constants.ScoopConstants.ScoopPos;
 import frc.robot.subsystems.BigStick.BigStickSubsystem;
 import frc.robot.subsystems.BigStick.States.PositionState;
 import frc.robot.subsystems.BigStick.States.PrecisionDownState;
@@ -14,6 +15,8 @@ import frc.robot.subsystems.BigStick.States.PrecisionUpState;
 import frc.robot.subsystems.BigStick.States.PrintState;
 import frc.robot.subsystems.Drivetrain.*;
 import frc.robot.subsystems.Drivetrain.States.OpenLoopState;
+import frc.robot.subsystems.Scoop.ScoopSubsystem;
+import frc.robot.subsystems.Scoop.States.ScoopPositionState;
 import frc.robot.subsystems.Yoinker.YoinkerSubsystem;
 import frc.robot.subsystems.Yoinker.States.ForwardState;
 import frc.robot.subsystems.Yoinker.States.IdleState;
@@ -34,6 +37,7 @@ public class RobotContainer {
   DrivetrainSubsystem drive;
   YoinkerSubsystem yoink;
   BigStickSubsystem stick;
+  ScoopSubsystem scoop;
   CommandGenericHID driveStick = ControllerMap.getDriveStick();
   CommandGenericHID buttonPad = ControllerMap.getButtonPad();
 
@@ -46,6 +50,7 @@ public class RobotContainer {
   private void setAllDefaultCommands() {
     CommandScheduler.getInstance().setDefaultCommand(drive, new OpenLoopState());
     CommandScheduler.getInstance().setDefaultCommand(stick, new PrintState());
+    CommandScheduler.getInstance().setDefaultCommand(scoop, new ScoopPositionState(ScoopPos.HOLD));
     CommandScheduler.getInstance().setDefaultCommand(yoink, new IdleState());
   }
 
@@ -53,6 +58,7 @@ public class RobotContainer {
     drive = DrivetrainSubsystem.getInstance();
     yoink = YoinkerSubsystem.getInstance();
     stick = BigStickSubsystem.getInstance();
+    scoop = ScoopSubsystem.getInstance();
   }
 
   private void configureBindings() {

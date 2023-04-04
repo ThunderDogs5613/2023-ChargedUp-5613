@@ -27,4 +27,23 @@ public final class Constants {
             FLOOR_YOINK, SHELF_YOINK, SCORE_CUBE, STARTUP, HOLD
         }
     }
+    public static final class ScoopConstants {
+        public static final double kP = 0.03;
+        public static final double kI = 0.00;
+        public static final double kD = 0.005;
+
+        public static final double maxThrotIn = 25;
+        public static final double minThrotIn = -43;
+        public static final double maxEncoderOut = 60;
+        public static final double minEncoderOut = 0;
+
+        public static final double startPos = 0;
+        public static final double straightUp = 3.81;
+        public static final double insideFrame = -3;
+        public static final double fullBack = 3.81;
+
+        public enum ScoopPos {
+            START, UP, INSIDE, BACK, HOLD
+        }
+    }
 }
