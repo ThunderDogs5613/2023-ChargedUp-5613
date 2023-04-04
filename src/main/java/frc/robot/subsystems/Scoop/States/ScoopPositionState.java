@@ -28,23 +28,23 @@ public class ScoopPositionState extends CommandBase{
       holdPosition = ScoopSubsystem.getInstance().getScoopPos();
   
       switch(position) {
-        case START :
-          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.startPos);
+        case ZERO :
+          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.zero);
  //         BigStickSubsystem.getInstance().setFeedForward(0.02);
           break;
   
           case UP :
-          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.straightUp);
-//          ArmSubsystem.getInstance().setFeedForward(0.01);
-          break; 
-          
-          case INSIDE :
-          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.insideFrame);
+          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.up);
 //          ArmSubsystem.getInstance().setFeedForward(0.01);
           break; 
           
           case BACK :
-          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.fullBack);
+          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.back);
+//          ArmSubsystem.getInstance().setFeedForward(0.01);
+          break; 
+          
+          case STOW :
+          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.stow);
 //          ArmSubsystem.getInstance().setFeedForward(0.01);
           break;  
           

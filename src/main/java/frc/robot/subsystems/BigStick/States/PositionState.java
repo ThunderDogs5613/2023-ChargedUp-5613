@@ -27,24 +27,19 @@ public class PositionState extends CommandBase{
       holdPosition = BigStickSubsystem.getInstance().getBigStickPos();
   
       switch(position) {
-        case FLOOR_YOINK :
-          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.yoinkFromFloor);
+        case DOWN :
+          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.down);
  //         BigStickSubsystem.getInstance().setFeedForward(0.02);
           break;
   
-        case SHELF_YOINK :
-          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.yoinkFromShelf);
+        case MID :
+          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.mid);
 //          ArmSubsystem.getInstance().setFeedForward(0.01);
           break;  
           
-        case STARTUP :
-          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.startingPos);
+        case UP :
+          BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.up);
 //          ArmSubsystem.getInstance().setFeedForward(0.2);
-          break;
-  
-        case SCORE_CUBE :
-        BigStickSubsystem.getInstance().setStickSetpoint(Constants.BigStickConstants.scoreCube);
-//        ArmSubsystem.getInstance().setFeedForward(0.05);
           break;
   
         case HOLD :

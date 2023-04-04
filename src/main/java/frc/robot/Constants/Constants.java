@@ -19,12 +19,11 @@ public final class Constants {
         public static final double bigStickPosRaiseSpeed = 0.20;
         public static final double bigStickPosLowerSpeed = -0.65;
 
-        public static final double startingPos = -75;
-        public static final double yoinkFromFloor = 0;
-        public static final double yoinkFromShelf = -120;
-        public static final double scoreCube = -142;
+        public static final double down = 0;
+        public static final double mid = -60;
+        public static final double up = -100;
         public enum BigStickPos {
-            FLOOR_YOINK, SHELF_YOINK, SCORE_CUBE, STARTUP, HOLD
+            DOWN, MID, UP, HOLD
         }
     }
     public static final class ScoopConstants {
@@ -37,13 +36,13 @@ public final class Constants {
         public static final double maxEncoderOut = 60;
         public static final double minEncoderOut = 0;
 
-        public static final double startPos = 0;
-        public static final double straightUp = 3.81;
-        public static final double insideFrame = -3;
-        public static final double fullBack = 3.81;
+        public static final double zero = 0;
+        public static final double up = -3.0;
+        public static final double back = -4;
+        public static final double stow = 3.0;
 
         public enum ScoopPos {
-            START, UP, INSIDE, BACK, HOLD
+            ZERO, UP, BACK, STOW, HOLD
         }
     }
 }

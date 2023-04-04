@@ -69,27 +69,27 @@ public class RobotContainer {
       new ReverseState()
     );
 
-    Trigger trig3 = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
-      new PositionState(BigStickPos.FLOOR_YOINK)
+    Trigger scoopZero = driveStick.button(ControllerMap.DriveController.Button.B3).onTrue(
+      new ScoopPositionState(ScoopPos.ZERO)
     );
-    Trigger  trig4 = driveStick.button(ControllerMap.DriveController.Button.B4).onTrue(
-      new PositionState(BigStickPos.SHELF_YOINK)
+    Trigger  scoopUp = driveStick.button(ControllerMap.DriveController.Button.B4).onTrue(
+      new ScoopPositionState(ScoopPos.UP)
     );
-    Trigger trig5 = driveStick.button(ControllerMap.DriveController.Button.B5).onTrue(
-      new PositionState(BigStickPos.SCORE_CUBE)
+    Trigger scoopStow = driveStick.button(ControllerMap.DriveController.Button.B5).onTrue(
+      new ScoopPositionState(ScoopPos.STOW)
     );
-    Trigger trig6 = driveStick.button(ControllerMap.DriveController.Button.B6).onTrue(
-      new PositionState(BigStickPos.STARTUP)
+    Trigger scoopBack = driveStick.button(ControllerMap.DriveController.Button.B6).onTrue(
+      new ScoopPositionState(ScoopPos.BACK)
     );
 
-    Trigger altTrig3 = buttonPad.button(ControllerMap.ButtonPad.Button.B12).onTrue(
-      new PositionState(BigStickPos.FLOOR_YOINK)
+    Trigger armDown = buttonPad.button(ControllerMap.ButtonPad.Button.B10).onTrue(
+      new PositionState(BigStickPos.DOWN)
     );
-    Trigger altTrig5 = buttonPad.button(ControllerMap.ButtonPad.Button.B10).onTrue(
-      new PositionState(BigStickPos.SCORE_CUBE)
+    Trigger armMid = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
+      new PositionState(BigStickPos.MID)
     );
-    Trigger altTrig6 = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
-      new PositionState(BigStickPos.STARTUP)
+    Trigger armUp = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
+      new PositionState(BigStickPos.UP)
     );
 
     Trigger trig7 = driveStick.button(ControllerMap.DriveController.POVButton.UP).onTrue(
