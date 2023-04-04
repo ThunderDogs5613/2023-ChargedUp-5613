@@ -11,7 +11,7 @@ public final class Constants {
     }
 
     public static final class BigStickConstants {
-        public static final double kP = 0.01;
+        public static final double kP = 0.02;
         public static final double kI = 0.00;
         public static final double kD = 0.00;
 
@@ -20,8 +20,8 @@ public final class Constants {
         public static final double bigStickPosLowerSpeed = -0.65;
 
         public static final double down = 0;
-        public static final double mid = -40;
-        public static final double up = -75;
+        public static final double mid = -55;
+        public static final double up = -90;
         public enum BigStickPos {
             DOWN, MID, UP, HOLD
         }
