@@ -88,7 +88,7 @@ public class RobotContainer {
     Trigger armMid = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
       new PositionState(BigStickPos.MID)
     );
-    Trigger armUp = buttonPad.button(ControllerMap.ButtonPad.Button.B11).onTrue(
+    Trigger armUp = buttonPad.button(ControllerMap.ButtonPad.Button.B12).onTrue(
       new PositionState(BigStickPos.UP)
     );
 

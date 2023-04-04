@@ -20,8 +20,8 @@ public final class Constants {
         public static final double bigStickPosLowerSpeed = -0.65;
 
         public static final double down = 0;
-        public static final double mid = -60;
-        public static final double up = -100;
+        public static final double mid = -40;
+        public static final double up = -75;
         public enum BigStickPos {
             DOWN, MID, UP, HOLD
         }
