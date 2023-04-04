@@ -37,8 +37,8 @@ public final class Constants {
         public static final double minEncoderOut = 0;
 
         public static final double zero = 0;
-        public static final double up = -10;
-        public static final double back = -13;
+        public static final double up = -13;
+        public static final double back = -18;
         public static final double stow = 8;
 
         public enum ScoopPos {
