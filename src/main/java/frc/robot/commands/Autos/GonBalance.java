@@ -8,7 +8,7 @@ public class GonBalance extends SequentialCommandGroup{
     public GonBalance() {
 
         addCommands(
-            new SetAutonArcade(0.3, 0).withTimeout(1.5),
+            new SetAutonArcade(0.3, 0).withTimeout(2),
             new AutoBalance(DrivetrainSubsystem.getInstance())
         );
     }
