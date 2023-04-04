@@ -43,6 +43,7 @@ public class PositionState extends CommandBase{
           break;
   
         case HOLD :
+        holdPosition = BigStickSubsystem.getInstance().getBigStickPos();
         BigStickSubsystem.getInstance().setStickSetpoint(holdPosition);
 //        ArmSubsystem.getInstance().setFeedForward(0.0);
           break;
