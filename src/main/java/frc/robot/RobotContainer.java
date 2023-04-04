@@ -49,7 +49,7 @@ public class RobotContainer {
 
   private void setAllDefaultCommands() {
     CommandScheduler.getInstance().setDefaultCommand(drive, new OpenLoopState());
-    CommandScheduler.getInstance().setDefaultCommand(stick, new PrintState());
+    CommandScheduler.getInstance().setDefaultCommand(stick, new PositionState(BigStickPos.HOLD));
     CommandScheduler.getInstance().setDefaultCommand(scoop, new ScoopPositionState(ScoopPos.HOLD));
     CommandScheduler.getInstance().setDefaultCommand(yoink, new IdleState());
   }
