@@ -83,6 +83,10 @@ public class ScoopSubsystem extends SubsystemBase{
     public void setScoopSetpoint(double setpoint) {
       scoopPID.setSetpoint(setpoint);
     }
+
+    public double getScoopSetpoint() {
+      return scoopPID.getSetpoint();
+    }
     
     public void periodic() {
       if(isUsingPID) {

@@ -28,8 +28,15 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.*;
+import frc.robot.commands.AutoChooser;
+import frc.robot.commands.Automations.CheckedCargoDump;
+import frc.robot.commands.Automations.CheckedLaunch;
+import frc.robot.commands.Automations.DumpCargo;
+import frc.robot.commands.Automations.LaunchHighh;
 import frc.robot.commands.Autos.GonBalance;
 import frc.robot.commands.Autos.MildRetreat;
+import frc.robot.commands.Autos.ThrowbackThursday;
+
 
 
 public class RobotContainer {
@@ -45,6 +52,7 @@ public class RobotContainer {
     initializeSubsystems();
     configureBindings();
     setAllDefaultCommands();
+    AutoChooser.configureAutoChooser();
   }
 
   private void setAllDefaultCommands() {
@@ -59,6 +67,7 @@ public class RobotContainer {
     yoink = YoinkerSubsystem.getInstance();
     stick = BigStickSubsystem.getInstance();
     scoop = ScoopSubsystem.getInstance();
+    
   }
 
   private void configureBindings() {
@@ -91,6 +100,20 @@ public class RobotContainer {
     Trigger armUp = buttonPad.button(ControllerMap.ButtonPad.Button.B12).onTrue(
       new PositionState(BigStickPos.UP)
     );
+    Trigger dumpCargo = buttonPad.button(ControllerMap.ButtonPad.Button.B9).onTrue(
+      new DumpCargo()
+    );
+    
+    Trigger launchHi = buttonPad.button(ControllerMap.ButtonPad.Button.B2).onTrue(
+      new LaunchHighh()
+    );
+    Trigger launchHig = buttonPad.button(ControllerMap.ButtonPad.Button.B1).onTrue(
+      new CheckedLaunch()
+    );
+    Trigger dumpyCargo = buttonPad.button(ControllerMap.ButtonPad.Button.B3).onTrue(
+      new CheckedCargoDump()
+    );
+
 
     Trigger trig7 = driveStick.button(ControllerMap.DriveController.POVButton.UP).onTrue(
       new PrecisionUpState().repeatedly()
@@ -104,6 +127,7 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return new GonBalance();
+    //return AutoChooser.auto_chooser.getSelected();
+    return new ThrowbackThursday();
   }
 }

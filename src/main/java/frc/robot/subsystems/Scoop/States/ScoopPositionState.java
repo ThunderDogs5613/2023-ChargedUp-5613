@@ -43,11 +43,6 @@ public class ScoopPositionState extends CommandBase{
 //          ArmSubsystem.getInstance().setFeedForward(0.01);
           break; 
           
-          case STOW :
-          ScoopSubsystem.getInstance().setScoopSetpoint(Constants.ScoopConstants.stow);
-//          ArmSubsystem.getInstance().setFeedForward(0.01);
-          break;  
-          
         case HOLD :
           holdPosition = ScoopSubsystem.getInstance().getScoopPos();
           ScoopSubsystem.getInstance().setScoopSetpoint(holdPosition);

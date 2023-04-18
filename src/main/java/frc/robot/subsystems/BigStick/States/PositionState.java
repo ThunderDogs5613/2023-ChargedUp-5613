@@ -58,5 +58,6 @@ public class PositionState extends CommandBase{
     @Override
     public void end(boolean interrupted) {
       BigStickSubsystem.getInstance().disable();
+      BigStickSubsystem.getInstance().setPower(0);
     }
 }

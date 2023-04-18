@@ -1,4 +1,4 @@
-package frc.robot.commands.Autos;
+package frc.robot.commands.Automations;
 
 import edu.wpi.first.math.filter.SlewRateLimiter;
 import edu.wpi.first.wpilibj.Timer;

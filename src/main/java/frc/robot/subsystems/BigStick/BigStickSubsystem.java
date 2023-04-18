@@ -67,6 +67,10 @@ public class BigStickSubsystem extends SubsystemBase {
     public void setStickSetpoint(double setpoint) {
       stickPID.setSetpoint(setpoint);
     }
+
+    public double getStickSetpoint() {
+      return stickPID.getSetpoint();
+    }
     
     public void periodic() {
       if(isUsingPID) {
